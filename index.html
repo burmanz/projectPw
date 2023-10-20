@@ -24,13 +24,41 @@
 <body>
     <div class="container">
         <h1>Custom Web Page</h1>
-        <p>Enter information in the input boxes below:</p>
+        <p>Enter URLs in the first input box and their values after '=' will be displayed in the second input box:</p>
         
-        <!-- Input Box 1 -->
-        <input type="text" class="input-box" id="inputBox1" placeholder="Input Box 1">
+        <!-- Input Box 1 for URLs -->
+        <input type="text" class="input-box" id="inputBox1" placeholder="Enter URLs">
         
-        <!-- Input Box 2 -->
-        <input type="text" class="input-box" id="inputBox2" placeholder="Input Box 2">
+        <!-- Input Box 2 for displaying values -->
+        <input type="text" class="input-box" id="inputBox2" placeholder="Values after '='">
     </div>
+
+    <script>
+        // Function to extract values after '=' from URLs
+        function extractValues() {
+            var urlInput = document.getElementById('inputBox1').value;
+            var valueInput = document.getElementById('inputBox2');
+
+            // Split the input by newline and process each URL
+            var urls = urlInput.split('\n');
+            var extractedValues = [];
+
+            for (var i = 0; i < urls.length; i++) {
+                var url = urls[i];
+                var params = new URLSearchParams(url.split('?')[1]);
+                var value = params.get('=');
+
+                if (value !== null) {
+                    extractedValues.push(value);
+                }
+            }
+
+            // Display the extracted values in Input Box 2
+            valueInput.value = extractedValues.join('\n');
+        }
+
+        // Add an event listener to the first input box to trigger the extraction
+        document.getElementById('inputBox1').addEventListener('input', extractValues);
+    </script>
 </body>
 </html>
