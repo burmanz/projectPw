@@ -24,13 +24,16 @@
 <body>
     <div class="container">
         <h1>Custom Web Page</h1>
-        <p>Paste URLs in the first input box and their values after '=' will be displayed in the second input box:</p>
+        <p>Paste URLs in the first input box, and click the "Convert" button to extract values after '=' into the second input box:</p>
         
         <!-- Input Box 1 for URLs -->
         <textarea class="input-box" id="inputBox1" placeholder="Paste URLs"></textarea>
         
         <!-- Input Box 2 for displaying values -->
         <textarea class="input-box" id="inputBox2" placeholder="Values after '='"></textarea>
+        
+        <!-- Convert Button -->
+        <button id="convertButton">Convert</button>
     </div>
 
     <script>
@@ -57,8 +60,8 @@
             valueInput.value = extractedValues.join('\n');
         }
 
-        // Add an event listener to the first input box to trigger the extraction on paste
-        document.getElementById('inputBox1').addEventListener('paste', extractValues);
+        // Add an event listener to the Convert button to trigger the extraction
+        document.getElementById('convertButton').addEventListener('click', extractValues);
     </script>
 </body>
 </html>
