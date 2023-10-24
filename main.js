@@ -29,7 +29,7 @@ function copyToClipboard(text) {
 }
 
 const quill = new Quill('#editor-container', {
-    theme: 'bubble',
+    theme: 'snow',
 });
 
 document.getElementById("generateButton").addEventListener("click", function () {
