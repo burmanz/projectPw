@@ -1,0 +1,25 @@
+/* styles.css */
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.input-box {
+    /* Your CSS for input boxes */
+}
+
+.box {
+    /* Your CSS for boxes */
+}
+
+.button-container {
+    text-align: center;
+}
+
+button {
+    /* Your CSS for buttons */
+}

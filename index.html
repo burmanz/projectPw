@@ -1,125 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-    <title>Tools PW</title>
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-        }
-        .input-box {
-            width: 100%;
-            padding: 5px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .box {
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            width: 340px;
-            text-align: left;
-            float: left;
-            margin-right: 20px; 
-        }
-        .box.right {
-            float: middle;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            width: 340px;
-            text-align: left;
-            margin-right: 20px;
-        }
-        .button-container {
-            text-align: center;
-        }
-        button {
-            background-color: #000000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
-</head>
+
 <body>
     <div class="box">
-        <div class="container">
-            <h2>URL TO ID's</h2>
-            <p>Enter URLs in the first input box, and click the "Convert" button. ID's will be copied automatically to the clipboard.</p>
-
-            <textarea class="input-box" id="inputBox1" placeholder="Enter URLs"></textarea>
-            <div class="button-container">
-                <textarea class="input-box" id="inputBox2" placeholder="ID's"></textarea>
-                <button id="convertButton">Convert</button>
-            </div>
-        </div>
+        <!-- Your HTML content for the first box -->
     </div>
 
     <div class="box right">
-        <div class="container">
-          <h2>RTF To Source Code</h2>
-          <p>Either Text/Rich Text Format/Images can be converted to source code directly.</p>
-    
-          <div id="editor-container">
-          </div>
-          
-          <div class="button-container">
-            <textarea class="input-box" id="inputBox4" placeholder="Generated HTML Code"></textarea>
-            <button id="generateButton">Generate HTML</button>
-          </div>
-        </div>
-      </div>
-    
-      <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-      <script>
-        const quill = new Quill('#editor-container', {
-          theme: 'snow',
-        });
-      
-        document.getElementById("generateButton").addEventListener("click", function() {
-          const htmlCode = quill.root.innerHTML;
-          document.getElementById("inputBox4").value = htmlCode;
-          const inputBox4 = document.getElementById("inputBox4");
-          inputBox4.select();
-          document.execCommand("copy");
-        });
-      </script>
-    <script>
-        function extractValues() {
-            var urlInput = document.getElementById('inputBox1').value;
-            var valueInput = document.getElementById('inputBox2');
-            var urls = urlInput.split('\n');
-            var extractedValues = [];
-    
-            for (var i = 0; i < urls.length; i++) {
-                var url = urls[i];
-                var splitUrl = url.split('=');
-                if (splitUrl.length > 1) {
-                    extractedValues.push(splitUrl[1]);
-                }
-            }
-            valueInput.value = extractedValues.join('\n');
-                copyToClipboard(extractedValues.join('\n'));
-        }
-        function copyToClipboard(text) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-        }
-        document.getElementById('convertButton').addEventListener('click', extractValues);
-    </script>
-    
+        <!-- Your HTML content for the second box -->
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
