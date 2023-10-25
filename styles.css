@@ -33,3 +33,41 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.input-box img {
+    max-width: 200px; 
+    max-height: 200px; 
+}
+
+body {
+    padding: 0 20px; 
+}
+
+
+
+.menu-item {
+    display: inline-block; 
+    margin: 0 20px; 
+}
+
+.box {
+    margin-top: 20px;
+}
+
+
+.menu-bar {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    animation: flash 2s infinite alternate;
+}
+
+@keyframes flash {
+    0% {
+        background-color: #333; 
+    }
+    100% {
+        background-color: rgb(130, 10, 10);
+    }
+}
